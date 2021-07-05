@@ -1,0 +1,79 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+ul {
+    list-style-type: none;
+}
+header {
+    text-align: center;
+    background: purple;
+    width: 100%;
+    color: #fff;
+    padding-top: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+nav > ul > li {
+    float: left;
+    /* outline: 1px solid; */
+    width: 33.33%;
+}
+nav > ul > li > a {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+}
+/* 현재 메뉴(페이지) */
+nav > ul > li.active > a {
+    color: rgba(255,255,255,1);
+    border-bottom: 4px solid #fff;
+}
+header > h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#pet {
+    padding: 15px;
+    text-align: center;
+}
+#pet > h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.pet-list {
+    overflow: hidden;
+}
+/* 홀수만 여백을 잡고 */
+.pet-list > li {            
+    width: 50%;
+    float: left;
+    padding: 0px 5px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.pet-list > li > a > img {
+    width: 100%;
+    /* 여백 뜬거 없애기 */
+    display: block;
+}
+.pet-list > li > a > .caption {
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    position: absolute;
+    /* 수정 : padding크기 제거 */
+    width: calc(100% - 10px);
+    padding: 1em;
+    /* padding 위치 0px -> 5px보정 */
+    left: 5px;
+    bottom: 0px;
+}
