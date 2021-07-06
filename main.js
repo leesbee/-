@@ -98,12 +98,13 @@ const petData = [
 //         console.log(petData[i].name);
 //     }
 
-$(function(){
+// $(function(){
+  function getPetData(type){
     var html = ''; //html변수
     // 동물데이터 불러오기
     for(var i = 0; i < petData.length; i++) {
-        // console.log(petData[i].name)
-        if(petData[i].type =='bird'){
+        // console.log(petData[i].name) 해당타입의 동물만 출력
+        if(petData[i].type == type){
             // += 계속 목록을 추가한다는의미
         html += `  
         <li>
@@ -120,5 +121,22 @@ $(function(){
         }        
     }
     //html 목록 출력
-    $('.pet-list').html(html)
-})
+      $('.pet-list').html(html)
+}
+/* 메인 함수 */
+$(function(){
+  // 현재 페이지 URL값에서 type 값을 가져오기
+  var query = location.search.split('=');
+  var type = query[1]
+  console.log(query[1]);
+
+  // 동물 출력 함수: getPetData(type)
+  getPetData(type);
+  // undefined는 전달된 값이 없을때 기본 데이터(개)
+  if(query[1] == undefined) {
+    getPetData('dog');
+  } else {
+    getPetData(type);
+  }
+  
+});
